@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EPIC Design System — preview</title>
+<meta name="description" content="EPIC (Education Platform Investing Company) design system: tokens, type, colour, components and the full marketing website preview.">
+<link rel="icon" href="assets/logo/epic-mark-royal-blue.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+body{margin:0;background:var(--epic-pale-stone);color:var(--text-body);font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.top{position:sticky;top:0;z-index:50;height:76px;display:flex;align-items:center;background:rgba(236,232,229,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--stone-200)}
+.top .epic-container{display:flex;align-items:center;gap:28px}
+.top nav{display:flex;gap:22px;margin-inline-start:auto;font-size:15px;color:var(--text-muted);flex-wrap:wrap}
+.top nav a:hover{color:#000}
+.epic-logo{font-size:30px}
+.hero{min-height:min(78vh,720px);display:flex;align-items:flex-end;border-radius:0 0 36px 36px}
+.hero .epic-container{padding-block:clamp(56px,8vw,112px);display:grid;gap:36px}
+.hero h1{margin:0;max-width:16ch;font-size:clamp(44px,7vw,104px);line-height:.98;letter-spacing:-0.035em;font-weight:500}
+.hero h1 span{display:block}
+.hero p{max-width:52ch;font-size:clamp(17px,1.4vw,21px);line-height:1.5;color:rgba(255,255,255,.66);margin:0}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.epic-btn{font-family:inherit}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;border-top:1px solid #000;padding-top:36px}
+.stats .epic-numeral{font-size:clamp(56px,6vw,96px);color:#000}
+.stats small{display:block;margin-top:10px;font-size:15px;color:var(--text-muted)}
+.count{font-size:14px;color:var(--text-muted);font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.tile{display:flex;flex-direction:column;background:#fff;border-radius:20px;overflow:hidden;transition:transform .9s cubic-bezier(.2,.7,.2,1),box-shadow .9s cubic-bezier(.2,.7,.2,1)}
+.tile:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(7,20,43,.35)}
+.tile.wide{grid-column:span 2}
+@media (max-width:760px){.tile.wide{grid-column:span 1}}
+.frame{position:relative;aspect-ratio:var(--vw)/var(--vh);overflow:hidden;background:#fff;border-bottom:1px solid var(--stone-200)}
+.frame iframe{position:absolute;inset:0;border:0;pointer-events:none;transform-origin:0 0;width:calc(var(--vw) * 1px);height:calc(var(--vh) * 1px);transform:scale(calc(var(--fw) / var(--vw)))}
+.meta{display:flex;flex-direction:column;gap:4px;padding:18px 20px 20px}
+.meta b{font-weight:500;font-size:16px;color:#000}
+.meta span{font-size:14px;color:var(--text-muted);line-height:1.4}
+.site{border-radius:36px;overflow:hidden;color:#fff}
+.site .in{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:clamp(40px,5vw,72px)}
+@media (max-width:900px){.site .in{grid-template-columns:1fr}}
+.site h2{font-size:clamp(34px,4vw,56px);line-height:1;letter-spacing:-0.03em;font-weight:500;margin:0 0 18px}
+.site p{color:rgba(255,255,255,.66);font-size:18px;line-height:1.55;margin:0 0 28px;max-width:46ch}
+.shot{position:relative;aspect-ratio:1440/900;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 40px 80px -40px rgba(0,0,0,.6);display:block}
+.shot iframe{position:absolute;inset:0;border:0;width:1440px;height:900px;transform-origin:0 0;transform:scale(calc(var(--fw)/1440));pointer-events:none}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.link{background:#fff;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .9s cubic-bezier(.2,.7,.2,1),box-shadow .9s cubic-bezier(.2,.7,.2,1)}
+.link:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(7,20,43,.35)}
+.link b{font-weight:500;font-size:18px;color:#000}.link span{font-size:15px;color:var(--text-muted);line-height:1.45}
+.link code{font-size:12px;color:var(--stone-500);font-family:var(--font-mono)}
+footer{background:#000;color:#fff;padding:56px 0 40px;margin-top:40px}
+footer .epic-container{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;font-size:14px;color:rgba(255,255,255,.66)}
+</style>
+</head>
+<body>
+<header class="top"><div class="epic-container">
+<a class="epic-logo" href="#"><img class="epic-logo__mark" src="assets/logo/epic-mark-black.svg" alt=""><span class="epic-logo__word">EPIC</span></a>
+<nav><a href="#website">Website</a><a href="#colors">Colors</a><a href="#type">Type</a><a href="#spacing">Spacing</a><a href="#brand">Brand</a><a href="#components">Components</a><a href="#files">Files</a></nav>
+</div></header>
+
+<section class="hero epic-surface epic-surface--glow-dark epic-grain"><div class="epic-container">
+<div class="epic-eyebrow" style="color:rgba(255,255,255,.66)">EPIC design system · preview</div>
+<h1><span>One identity.</span><span>Every surface.</span><span>Ready to build.</span></h1>
+<p>Tokens, type, colour, surfaces and 27 React components for EPIC, the back office for education businesses in Saudi Arabia. Everything below runs live from this repository.</p>
+<div class="actions"><a class="epic-btn epic-btn--primary" href="ui_kits/website/index.html">Open the marketing site</a><a class="epic-btn epic-btn--outline" style="color:#fff" href="brand_board/Brand%20Identity%20Board.html">Brand identity board</a></div>
+</div></section>
+
+<section class="epic-section" id="website"><div class="epic-container">
+<div class="stats"><div><div class="epic-numeral">27</div><small>years in Saudi education</small></div><div><div class="epic-numeral">89</div><small>organisations advised</small></div><div><div class="epic-numeral">158</div><small>leaders developed</small></div><div><div class="epic-numeral">4,800</div><small>trainees across 24 centres</small></div></div>
+</div></section>
+
+<section class="epic-section" style="padding-top:0"><div class="epic-container">
+<div class="site epic-surface epic-surface--glow epic-grain"><div class="in">
+<div><div class="epic-eyebrow" style="color:rgba(255,255,255,.66);margin-bottom:18px">01 · Website</div><h2>The marketing site, assembled from the system.</h2><p>Home, Services, Insights and Book a call. Sticky header, glow hero, logo strip, stat row, service rows, testimonials, package, journey, FAQ, CTA band, black footer. Toggle EN / العربية in the header to flip to RTL.</p><a class="epic-btn epic-btn--light" href="ui_kits/website/index.html">Open full screen</a></div>
+<a class="shot" href="ui_kits/website/index.html" aria-label="Open the marketing site"><iframe loading="lazy" src="ui_kits/website/index.html" title="EPIC marketing site" tabindex="-1"></iframe></a>
+</div></div>
+</div></section>
+
+<section class="epic-section" id="colors"><div class="epic-container">
+<div class="epic-section-head"><div class="epic-section-head__text"><div class="epic-eyebrow epic-section-head__eyebrow">02 · Colors</div><h2 class="epic-section-head__title">Mostly neutral. One Royal Blue moment.</h2></div><div class="count">5 cards</div></div>
+<div class="grid">
+<a class="tile" href="guidelines/colors-blue.html" style="--vw:700;--vh:170"><div class="frame"><iframe loading="lazy" src="guidelines/colors-blue.html" width="700" height="170" tabindex="-1" title="Royal Blue scale"></iframe></div><div class="meta"><b>Royal Blue scale</b><span>Tints for badges, hover and press</span></div></a>
+<a class="tile" href="guidelines/colors-brand.html" style="--vw:700;--vh:170"><div class="frame"><iframe loading="lazy" src="guidelines/colors-brand.html" width="700" height="170" tabindex="-1" title="Official palette"></iframe></div><div class="meta"><b>Official palette</b><span>The five identity colours</span></div></a>
+<a class="tile" href="guidelines/colors-neutral.html" style="--vw:700;--vh:170"><div class="frame"><iframe loading="lazy" src="guidelines/colors-neutral.html" width="700" height="170" tabindex="-1" title="Warm neutrals"></iframe></div><div class="meta"><b>Warm neutrals</b><span>Stone scale derived from Pale Stone + Warm Gray</span></div></a>
+<a class="tile" href="guidelines/colors-semantic.html" style="--vw:700;--vh:200"><div class="frame"><iframe loading="lazy" src="guidelines/colors-semantic.html" width="700" height="200" tabindex="-1" title="Semantic aliases"></iframe></div><div class="meta"><b>Semantic aliases</b><span>Surfaces, text and borders</span></div></a>
+<a class="tile" href="guidelines/colors-utility.html" style="--vw:700;--vh:150"><div class="frame"><iframe loading="lazy" src="guidelines/colors-utility.html" width="700" height="150" tabindex="-1" title="Utility colours"></iframe></div><div class="meta"><b>Utility colours</b><span>WhatsApp and status — use sparingly</span></div></a>
+</div></div></section>
+
+<section class="epic-section" id="type"><div class="epic-container">
+<div class="epic-section-head"><div class="epic-section-head__text"><div class="epic-eyebrow epic-section-head__eyebrow">03 · Type</div><h2 class="epic-section-head__title">GC Gatuzo, tight and composed.</h2></div><div class="count">5 cards</div></div>
+<div class="grid">
+<a class="tile" href="guidelines/type-arabic.html" style="--vw:700;--vh:210"><div class="frame"><iframe loading="lazy" src="guidelines/type-arabic.html" width="700" height="210" tabindex="-1" title="Arabic pairing"></iframe></div><div class="meta"><b>Arabic pairing</b><span>IBM Plex Sans Arabic, RTL, no tracking</span></div></a>
+<a class="tile" href="guidelines/type-body.html" style="--vw:700;--vh:220"><div class="frame"><iframe loading="lazy" src="guidelines/type-body.html" width="700" height="220" tabindex="-1" title="Body &amp; lead"></iframe></div><div class="meta"><b>Body &amp; lead</b><span>GC Gatuzo Regular 17/1.6; lead 21/1.5</span></div></a>
+<a class="tile" href="guidelines/type-display.html" style="--vw:700;--vh:230"><div class="frame"><iframe loading="lazy" src="guidelines/type-display.html" width="700" height="230" tabindex="-1" title="Display"></iframe></div><div class="meta"><b>Display</b><span>GC Gatuzo Medium, -0.035em, 0.98 leading</span></div></a>
+<a class="tile" href="guidelines/type-eyebrow-numerals.html" style="--vw:700;--vh:200"><div class="frame"><iframe loading="lazy" src="guidelines/type-eyebrow-numerals.html" width="700" height="200" tabindex="-1" title="Eyebrow &amp; numerals"></iframe></div><div class="meta"><b>Eyebrow &amp; numerals</b><span>12px uppercase +0.14em; Light numerals</span></div></a>
+<a class="tile" href="guidelines/type-headings.html" style="--vw:700;--vh:300"><div class="frame"><iframe loading="lazy" src="guidelines/type-headings.html" width="700" height="300" tabindex="-1" title="Headings"></iframe></div><div class="meta"><b>Headings</b><span>H1–H4, Medium with tight tracking</span></div></a>
+</div></div></section>
+
+<section class="epic-section" id="spacing"><div class="epic-container">
+<div class="epic-section-head"><div class="epic-section-head__text"><div class="epic-eyebrow epic-section-head__eyebrow">04 · Spacing</div><h2 class="epic-section-head__title">4px base, 80–144px section rhythm.</h2></div><div class="count">3 cards</div></div>
+<div class="grid">
+<a class="tile" href="guidelines/radii.html" style="--vw:700;--vh:160"><div class="frame"><iframe loading="lazy" src="guidelines/radii.html" width="700" height="160" tabindex="-1" title="Corner radii"></iframe></div><div class="meta"><b>Corner radii</b><span>Pills for controls, 20–36px for cards &amp; bands</span></div></a>
+<a class="tile" href="guidelines/shadows.html" style="--vw:700;--vh:170"><div class="frame"><iframe loading="lazy" src="guidelines/shadows.html" width="700" height="170" tabindex="-1" title="Elevation"></iframe></div><div class="meta"><b>Elevation</b><span>Navy-tinted, used only on hover/float</span></div></a>
+<a class="tile" href="guidelines/spacing-scale.html" style="--vw:700;--vh:200"><div class="frame"><iframe loading="lazy" src="guidelines/spacing-scale.html" width="700" height="200" tabindex="-1" title="Spacing scale"></iframe></div><div class="meta"><b>Spacing scale</b><span>4px base; section rhythm 80–144px</span></div></a>
+</div></div></section>
+
+<section class="epic-section" id="brand"><div class="epic-container">
+<div class="epic-section-head"><div class="epic-section-head__text"><div class="epic-eyebrow epic-section-head__eyebrow">05 · Brand</div><h2 class="epic-section-head__title">The mark, the glow, the texture.</h2></div><div class="count">6 cards</div></div>
+<div class="grid">
+<a class="tile" href="guidelines/logo-lockups.html" style="--vw:700;--vh:220"><div class="frame"><iframe loading="lazy" src="guidelines/logo-lockups.html" width="700" height="220" tabindex="-1" title="Logo lockups"></iframe></div><div class="meta"><b>Logo lockups</b><span>Mark + EPIC wordmark (GC Gatuzo Medium)</span></div></a>
+<a class="tile" href="guidelines/logo-marks.html" style="--vw:700;--vh:170"><div class="frame"><iframe loading="lazy" src="guidelines/logo-marks.html" width="700" height="170" tabindex="-1" title="Mark colours"></iframe></div><div class="meta"><b>Mark colours</b><span>Solid only: Royal Blue, Black, Navy, White</span></div></a>
+<a class="tile" href="guidelines/motion.html" style="--vw:700;--vh:170"><div class="frame"><iframe loading="lazy" src="guidelines/motion.html" width="700" height="170" tabindex="-1" title="Motion"></iframe></div><div class="meta"><b>Motion</b><span>Slow ease-out reveals; hover = small shifts</span></div></a>
+<a class="tile" href="guidelines/surfaces-glow.html" style="--vw:700;--vh:220"><div class="frame"><iframe loading="lazy" src="guidelines/surfaces-glow.html" width="700" height="220" tabindex="-1" title="Glow surfaces"></iframe></div><div class="meta"><b>Glow surfaces</b><span>Signature radial glow + film grain</span></div></a>
+<a class="tile" href="guidelines/surfaces-texture.html" style="--vw:700;--vh:200"><div class="frame"><iframe loading="lazy" src="guidelines/surfaces-texture.html" width="700" height="200" tabindex="-1" title="Textures &amp; blocks"></iframe></div><div class="meta"><b>Textures &amp; blocks</b><span>Fluted ribs, solid blue, black card</span></div></a>
+<a class="tile" href="brand_board/Brand Identity Board.html" style="--vw:1920;--vh:1080"><div class="frame"><iframe loading="lazy" src="brand_board/Brand Identity Board.html" width="1920" height="1080" tabindex="-1" title="Brand identity board"></iframe></div><div class="meta"><b>Brand identity board</b><span>Logo, colour, app icon, stationery, web, environmental, collateral</span></div></a>
+</div></div></section>
+
+<section class="epic-section" id="components"><div class="epic-container">
+<div class="epic-section-head"><div class="epic-section-head__text"><div class="epic-eyebrow epic-section-head__eyebrow">06 · Components</div><h2 class="epic-section-head__title">Every primitive the site is built from.</h2></div><div class="count">7 cards</div></div>
+<div class="grid">
+<a class="tile" href="components/actions/actions.card.html" style="--vw:700;--vh:300"><div class="frame"><iframe loading="lazy" src="components/actions/actions.card.html" width="700" height="300" tabindex="-1" title="Buttons &amp; WhatsApp"></iframe></div><div class="meta"><b>Buttons &amp; WhatsApp</b><span>Primary blue, dark, outline, light, link; WhatsApp</span></div></a>
+<a class="tile" href="components/brand/brand.card.html" style="--vw:700;--vh:240"><div class="frame"><iframe loading="lazy" src="components/brand/brand.card.html" width="700" height="240" tabindex="-1" title="Logo, surfaces, icons"></iframe></div><div class="meta"><b>Logo, surfaces, icons</b><span>Logo, EpicMark, GlowSurface, Icon, Reveal</span></div></a>
+<a class="tile" href="components/cards/cards.card.html" style="--vw:1280;--vh:900"><div class="frame"><iframe loading="lazy" src="components/cards/cards.card.html" width="1280" height="900" tabindex="-1" title="Cards"></iframe></div><div class="meta"><b>Cards</b><span>Pillar, package, testimonial, team, insight, profile</span></div></a>
+<a class="tile" href="components/display/display.card.html" style="--vw:700;--vh:260"><div class="frame"><iframe loading="lazy" src="components/display/display.card.html" width="700" height="260" tabindex="-1" title="Badges &amp; tabs"></iframe></div><div class="meta"><b>Badges &amp; tabs</b><span>Pill badges; pill / underline / dark tabs</span></div></a>
+<a class="tile" href="components/forms/forms.card.html" style="--vw:700;--vh:420"><div class="frame"><iframe loading="lazy" src="components/forms/forms.card.html" width="700" height="420" tabindex="-1" title="Form inputs"></iframe></div><div class="meta"><b>Form inputs</b><span>Input, select, textarea, checkbox, radio; states</span></div></a>
+<a class="tile" href="components/navigation/navigation.card.html" style="--vw:1280;--vh:560"><div class="frame"><iframe loading="lazy" src="components/navigation/navigation.card.html" width="1280" height="560" tabindex="-1" title="Header &amp; footer"></iframe></div><div class="meta"><b>Header &amp; footer</b><span>Sticky header (frosted) and black footer</span></div></a>
+<a class="tile" href="components/sections/sections.card.html" style="--vw:1280;--vh:720"><div class="frame"><iframe loading="lazy" src="components/sections/sections.card.html" width="1280" height="720" tabindex="-1" title="Page sections"></iframe></div><div class="meta"><b>Page sections</b><span>Hero, logo strip, stats, service row, steps, FAQ, CTA band</span></div></a>
+</div></div></section>
+
+
+
+<section class="epic-section" id="files"><div class="epic-container">
+<div class="epic-section-head"><div class="epic-section-head__text"><div class="epic-eyebrow epic-section-head__eyebrow">07 · Files</div><h2 class="epic-section-head__title">Use it in code.</h2></div></div>
+<div class="links">
+<a class="link" href="styles.css"><b>styles.css</b><span>Global entry. Imports fonts, colors, typography, spacing, effects, base and components.</span><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></a>
+<a class="link" href="tokens/colors.css"><b>tokens/</b><span>Seven CSS files: every variable the system uses, plus all .epic-* component classes.</span><code>tokens/colors.css · typography.css · effects.css</code></a>
+<a class="link" href="_ds_bundle.js"><b>_ds_bundle.js</b><span>All React components as one browser bundle, exported on window.</span><code>window.EPICDesignSystem_70c10b</code></a>
+<a class="link" href="components/actions/Button.jsx"><b>components/</b><span>Source for each primitive: .jsx, .d.ts types and a .prompt.md usage note.</span><code>components/&lt;group&gt;/&lt;Name&gt;.jsx</code></a>
+<a class="link" href="DESIGN.md"><b>DESIGN.md</b><span>Content fundamentals, visual foundations, iconography rules and caveats.</span><code>readme of the system</code></a>
+<a class="link" href="assets/logo/epic-mark-royal-blue.svg"><b>assets/</b><span>The mark in five colourways, GC Gatuzo demo weights, the identity reference slide.</span><code>assets/logo · assets/fonts</code></a>
+</div>
+</div></section>
+
+<footer><div class="epic-container"><span class="epic-logo" style="font-size:22px;color:#fff"><img class="epic-logo__mark" src="assets/logo/epic-mark-white.svg" alt=""><span class="epic-logo__word">EPIC</span></span><span>EPIC is not a law firm. · Fonts are GC Gatuzo Demo; production needs the licensed build.</span><span>© 2026 EPIC — Education Platform Investing Company</span></div></footer>
+
+<script>
+// Size scaled iframe previews to their tile width.
+const fit = () => document.querySelectorAll('.frame, .shot').forEach(el => el.style.setProperty('--fw', el.clientWidth));
+// Wide cards (1280+ viewports) span two columns.
+document.querySelectorAll('.tile').forEach(t => { if (+getComputedStyle(t).getPropertyValue('--vw') >= 1280) t.classList.add('wide'); });
+fit(); addEventListener('resize', fit);
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+:root{
+/* Official palette */
+--epic-royal-blue:#366BFF;
+--epic-black:#000000;
+--epic-midnight-navy:#07142B;
+--epic-warm-gray:#CFC8C3;
+--epic-pale-stone:#ECE8E5;
+--epic-white:#FFFFFF;
+/* Signature surface */
+--epic-glow-blue:#075090;
+--epic-mist-gray:#A6A8AB;
+/* Royal Blue scale */
+--blue-50:#EEF2FF;
+--blue-100:#DCE5FF;
+--blue-200:#B5C8FF;
+--blue-300:#86A5FF;
+--blue-500:#366BFF;
+--blue-600:#2457E6;
+--blue-700:#1B45BF;
+--blue-900:#0B2266;
+/* Warm neutrals (derived from Pale Stone / Warm Gray) */
+--stone-25:#FAF8F7;
+--stone-50:#F5F2F0;
+--stone-100:#ECE8E5;
+--stone-200:#DFD9D4;
+--stone-300:#CFC8C3;
+--stone-500:#8F8883;
+--stone-600:#6B6560;
+--stone-700:#4A4541;
+--stone-900:#1C1A18;
+/* Utility */
+--epic-whatsapp:#25D366;
+--epic-whatsapp-ink:#0B3D21;
+--success:#1E7A4C;
+--success-bg:#E3F1E9;
+--warning:#9A5B00;
+--warning-bg:#F8EBD6;
+--danger:#C2362C;
+--danger-bg:#F8E3E1;
+
+/* Semantic aliases */
+--bg-page:var(--epic-pale-stone);
+--bg-subtle:var(--stone-50);
+--surface-card:var(--epic-white);
+--surface-muted:var(--stone-50);
+--surface-stone:var(--epic-pale-stone);
+--surface-inverse:var(--epic-black);
+--surface-navy:var(--epic-midnight-navy);
+--surface-accent:var(--epic-royal-blue);
+
+--text-strong:var(--epic-black);
+--text-body:var(--stone-900);
+--text-muted:var(--stone-600);
+--text-subtle:var(--stone-500);
+--text-on-accent:var(--epic-white);
+--text-on-dark:var(--epic-white);
+--text-on-dark-muted:rgba(255,255,255,.66);
+--text-accent:var(--epic-royal-blue);
+--text-link:var(--blue-600);
+
+--border-subtle:var(--stone-200);
+--border-default:var(--stone-300);
+--border-strong:var(--epic-black);
+--border-on-dark:rgba(255,255,255,.16);
+
+--accent:var(--epic-royal-blue);
+--accent-hover:var(--blue-600);
+--accent-press:var(--blue-700);
+--accent-tint:var(--blue-50);
+--focus-ring:rgba(54,107,255,.38);
+}

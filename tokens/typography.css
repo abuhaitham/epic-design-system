@@ -1,0 +1,44 @@
+:root{
+--font-sans:"GC Gatuzo","IBM Plex Sans Arabic",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+--font-display:"GC Gatuzo","IBM Plex Sans Arabic",ui-sans-serif,system-ui,sans-serif;
+--font-arabic:"IBM Plex Sans Arabic","GC Gatuzo",system-ui,sans-serif;
+--font-mono:ui-monospace,"SF Mono",Menlo,monospace;
+
+--weight-light:300;
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+--weight-bold:700;
+
+--text-display:clamp(48px,7.2vw,104px);
+--text-h1:clamp(40px,5.4vw,72px);
+--text-h2:clamp(32px,3.8vw,52px);
+--text-h3:clamp(24px,2.2vw,32px);
+--text-h4:22px;
+--text-lead:clamp(18px,1.4vw,21px);
+--text-body:17px;
+--text-sm:15px;
+--text-xs:13px;
+--text-eyebrow:12px;
+--text-numeral:clamp(56px,7vw,112px);
+
+--leading-display:0.98;
+--leading-heading:1.06;
+--leading-snug:1.25;
+--leading-body:1.6;
+
+--tracking-display:-0.035em;
+--tracking-heading:-0.025em;
+--tracking-tight:-0.01em;
+--tracking-eyebrow:0.14em;
+}
+[dir="rtl"],:lang(ar){
+--font-sans:"IBM Plex Sans Arabic","GC Gatuzo",system-ui,sans-serif;
+--font-display:"IBM Plex Sans Arabic","GC Gatuzo",system-ui,sans-serif;
+--tracking-display:0;
+--tracking-heading:0;
+--tracking-tight:0;
+--tracking-eyebrow:0;
+--leading-display:1.15;
+--leading-heading:1.2;
+}

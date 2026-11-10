@@ -1,0 +1,29 @@
+:root{
+--shadow-xs:0 1px 2px rgba(7,20,43,.06);
+--shadow-sm:0 2px 8px -2px rgba(7,20,43,.08);
+--shadow-md:0 12px 32px -12px rgba(7,20,43,.18);
+--shadow-lg:0 32px 72px -24px rgba(7,20,43,.32);
+--shadow-focus:0 0 0 3px var(--focus-ring);
+
+--ease-out:cubic-bezier(.2,.7,.2,1); /* @kind other */
+--ease-in-out:cubic-bezier(.65,0,.35,1); /* @kind other */
+--ease-spring:cubic-bezier(.34,1.4,.64,1); /* @kind other */
+--dur-fast:150ms; /* @kind other */
+--dur-base:250ms; /* @kind other */
+--dur-slow:450ms; /* @kind other */
+--dur-reveal:900ms; /* @kind other */
+
+--blur-header:16px; /* @kind other */
+--z-header:50; /* @kind other */
+--z-float:60; /* @kind other */
+--z-overlay:80; /* @kind other */
+
+/* Signature glow surfaces */
+--surface-glow:radial-gradient(ellipse 58% 90% at 86% 56%,#075090 0%,rgba(7,80,144,.82) 18%,rgba(52,108,160,.55) 40%,rgba(120,146,170,.25) 62%,rgba(166,168,171,0) 80%),linear-gradient(180deg,#ABADB0 0%,#A6A8AB 100%); /* @kind color */
+--surface-glow-stone:radial-gradient(ellipse 55% 85% at 84% 60%,rgba(7,80,144,.9) 0%,rgba(7,80,144,.5) 26%,rgba(166,168,171,.35) 55%,rgba(236,232,229,0) 80%),linear-gradient(180deg,#ECE8E5 0%,#DCD8D5 100%); /* @kind color */
+--surface-glow-dark:radial-gradient(ellipse 55% 85% at 82% 50%,rgba(54,107,255,.78) 0%,rgba(54,107,255,.36) 30%,rgba(7,80,144,.18) 55%,rgba(7,20,43,0) 78%),#07142B; /* @kind color */
+--surface-fluted:repeating-linear-gradient(90deg,#2A5BE8 0px,#4D7DFF 7px,#366BFF 12px,#1F4FD6 18px,#2A5BE8 20px); /* @kind color */
+--surface-fluted-dark:repeating-linear-gradient(90deg,#0A1A38 0px,#1B3A7A 7px,#122A5C 12px,#07142B 18px,#0A1A38 20px); /* @kind color */
+--grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); /* @kind other */
+--grain-opacity:.22; /* @kind other */
+}

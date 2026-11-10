@@ -1,0 +1,66 @@
+<!-- @dsCard group="Website" viewport="1440x900" name="EPIC marketing site" subtitle="Home, Services, Insights, Book a call · EN/AR" -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EPIC — Education Platform Investing Company</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="copy.js"></script>
+<style>.kit-fade{animation:kitfade .6s var(--ease-out)}@keyframes kitfade{from{opacity:0}to{opacity:1}}</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="HomeScreen.jsx"></script>
+<script type="text/babel" src="ServicesScreen.jsx"></script>
+<script type="text/babel" src="BookScreen.jsx"></script>
+<script type="text/babel" src="InsightsScreen.jsx"></script>
+<script type="text/babel">
+const { SiteHeader, Footer, WhatsAppButton } = window.EPICDesignSystem_70c10b;
+const FOOTER_AR = {
+  blurb: 'المكتب الخلفي لقطاع التعليم في المملكة العربية السعودية. من الترخيص إلى الافتتاح إلى التوسع.',
+  newsletterLabel: 'رؤى شهرية', newsletterPlaceholder: 'بريدك الإلكتروني', newsletterCta: 'اشترك',
+  columns: [
+    { heading: 'الخدمات', links: [{ label: 'التأسيس', href: '#services' }, { label: 'الامتثال', href: '#services' }, { label: 'النمو', href: '#services' }, { label: 'باقة SCG', href: '#home' }] },
+    { heading: 'الشركة', links: [{ label: 'عن إبيك', href: '#home' }, { label: 'الفريق', href: '#services' }, { label: 'رؤى', href: '#insights' }, { label: 'الوظائف', href: '#home' }] },
+    { heading: 'تواصل', links: [{ label: 'الرياض، المملكة العربية السعودية', href: '#book' }, { label: 'hello@epic.sa', href: '#book' }, { label: 'واتساب', href: '#book' }, { label: 'لينكدإن', href: '#home' }] },
+  ],
+  disclaimer: 'إبيك ليست مكتب محاماة. المعلومات في هذا الموقع إرشادات عامة حول ترخيص المنشآت التعليمية وتشغيلها في المملكة العربية السعودية وليست استشارة قانونية.',
+  copyright: '© 2026 إبيك — شركة منصة الاستثمار التعليمي. سابقًا: الكم المتقدم القابضة.',
+  legal: [{ label: 'الخصوصية', href: '#home' }, { label: 'الشروط', href: '#home' }, { label: 'إشعار حماية البيانات', href: '#home' }],
+};
+
+function App() {
+  const [screen, setScreen] = React.useState(() => localStorage.getItem('epic-kit-screen') || 'home');
+  const [lang, setLang] = React.useState(() => localStorage.getItem('epic-kit-lang') || 'en');
+  const [pillar, setPillar] = React.useState('setup');
+  const t = window.EPIC_COPY[lang];
+  React.useEffect(() => {
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+    localStorage.setItem('epic-kit-lang', lang);
+  }, [lang]);
+  React.useEffect(() => { localStorage.setItem('epic-kit-screen', screen); }, [screen]);
+  const go = (s, p) => { if (p) setPillar(p); setScreen(s); window.scrollTo(0, 0); };
+  const Screen = { home: HomeScreen, services: ServicesScreen, book: BookScreen, insights: InsightsScreen }[screen] || HomeScreen;
+  return (
+    <div>
+      <SiteHeader overlay hideOnScroll lang={lang} onLangToggle={() => setLang(lang === 'en' ? 'ar' : 'en')}
+        links={t.nav} loginLabel={t.login} ctaLabel={t.cta} onCtaClick={(e) => { e.preventDefault(); go('book'); }}
+        onNavigate={(l) => go(l.id)} />
+      <div key={screen + lang} className="kit-fade">
+        <Screen t={t} go={go} pillar={pillar} setPillar={setPillar} />
+      </div>
+      <Footer {...(lang === 'ar' ? FOOTER_AR : {})} />
+      <WhatsAppButton float label={t.wa} message={lang === 'ar' ? 'مرحبًا إبيك' : 'Hi EPIC'} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

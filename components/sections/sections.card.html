@@ -1,0 +1,20 @@
+<!-- @dsCard group="Components" viewport="1280x720" name="Page sections" subtitle="Hero, logo strip, stats, service row, steps, FAQ, CTA band" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:0px;background:var(--epic-pale-stone)}.lbl{font-size:11px;color:var(--stone-500);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const D = window.EPICDesignSystem_70c10b;
+const { Hero, LogoStrip, StatRow, ServiceRow, NumberedSteps, FAQAccordion, CTABand, SectionHeading } = D;
+function App(){return (<div>
+<Hero minHeight={520} eyebrow="Education back office · KSA" lead="From licence to launch to scale, EPIC runs setup, compliance and growth for Saudi education businesses." primaryCta={{label:'Book a discovery call',arrow:true}} secondaryCta={{label:'Explore services'}} />
+<div className="epic-container"><LogoStrip /><div style={{padding:'64px 0'}}><StatRow /></div>
+<div style={{padding:'32px 0 64px'}}><ServiceRow index="01" eyebrow="Setup" title="License faster. Open sooner. Start right." items={['Licensing & registration','Ministry approvals','Curriculum','Saudization','Financial modelling']} cta={{label:'Explore Setup'}} /></div>
+<SectionHeading eyebrow="Your journey with EPIC" title="Four steps. One accountable team." /><NumberedSteps />
+<div style={{padding:'64px 0'}}><FAQAccordion items={[{q:'How long does a private school licence take?',a:'Most licences take four to nine months depending on stage and city. We give you a dated roadmap in week one.'},{q:'Do you handle ETEC and NCAAA accreditation?',a:'Yes. We run readiness reviews, evidence files and mock visits.'}]} /></div>
+<div style={{paddingBottom:64}}><CTABand text="Thirty minutes with an EPIC lead. No obligation." /></div></div>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>
